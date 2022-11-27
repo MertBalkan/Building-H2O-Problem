@@ -2,8 +2,8 @@
 
 CENG 305 Operating Systems Project
 
-Problem Solved By:
+Problem Solution By:
 
-Mert Balkan
-Tolga Titiz
-Akif Kadıoğlu
+-Mert Balkan
+-Tolga Titiz
+-Akif Kadıoğlu
