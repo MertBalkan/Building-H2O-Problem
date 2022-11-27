@@ -4,6 +4,6 @@ CENG 305 Operating Systems Project
 
 Problem Solution By:
 
--Mert Balkan
--Tolga Titiz
--Akif Kadıoğlu
+1. Mert Balkan
+2. Tolga Titiz
+3. Akif Kadıoğlu
