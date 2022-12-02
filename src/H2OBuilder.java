@@ -9,6 +9,14 @@ public class H2OBuilder {
 	
 	private int hydrogenCount;
 	private int oxygenCount;
+	private int moleculeCount;
+	
+	private int totalHydrogenCount;
+	private int totalOxygenCount;
+	
+	public int getHydrogenCount() { return hydrogenCount; }
+
+	public int getOxygenCount() { return oxygenCount; }
 	
 	public H2OBuilder() {
 		mutex = new Semaphore(1);
@@ -25,12 +33,15 @@ public class H2OBuilder {
 			mutex.acquire();
 			
 			oxygenCount++;
+			totalOxygenCount++;
 			System.out.println(index + ".OXYGEN CREATED");
+			System.out.println("TOTAL OXYGEN COUNT: " + totalOxygenCount);
 			
 			if(hydrogenCount >= 2)
 				createWater();
-				
+			
 			mutex.release();
+			
 			oxygenQueue.acquire();
 
 			makeBound();
@@ -47,7 +58,9 @@ public class H2OBuilder {
 			mutex.acquire();
 			
 			hydrogenCount++;
+			totalHydrogenCount++;
 			System.out.println(index + ".HYDROGEN CREATED");
+			System.out.println("TOTAL HYDROGEN COUNT: " + totalHydrogenCount);
 		
 			if(hydrogenCount >= 2 && oxygenCount >= 1) 
 				createWater();
@@ -72,8 +85,10 @@ public class H2OBuilder {
 		
 		oxygenQueue.release();
 		oxygenCount--;
+		
+		moleculeCount++;
 	
-		System.out.println("WATER CREATED! DRINK!!!!");
+		System.out.println("WATER CREATED! DRINK: " + moleculeCount);
 	
 	}
 	
