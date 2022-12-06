@@ -88,7 +88,7 @@ public class H2OBuilder {
 		
 		moleculeCount++;
 	
-		System.out.println("WATER CREATED! DRINK: " + moleculeCount);
+		System.err.println("WATER CREATED! DRINK: " + moleculeCount);
 	
 	}
 	
